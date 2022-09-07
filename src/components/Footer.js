@@ -7,7 +7,7 @@ export const Footer = () => {
         <div class="content has-text-centered">
           <p>
             This site was built with <a href="https://bulma.io/">Bulma</a> by{" "}
-            <a href="https://galderetehero.github.io/ProyCursoJS/">
+            <a href="https://github.com/GAldereteHero">
               Gonzalo Alderete Hero.
             </a>
             <br />
