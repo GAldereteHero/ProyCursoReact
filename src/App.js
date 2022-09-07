@@ -2,8 +2,8 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'bulma/css/bulma.min.css';
 import "./App.css";
 
-import { NavBar } from "./components/NavBar.js";
-import { Footer } from "./components/Footer.js";
+import { NavBar } from "./components/Navbar/Navbar.js";
+import { Footer } from "./components/Footer/Footer.js";
 
 function App() {
   return (
