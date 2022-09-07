@@ -1,6 +1,6 @@
 import React from "react";
-import logo from '../assets/hoja.png';
-import iconCart from '../assets/shopping-cart.png';
+import { CartWidget } from "../CartWidget/CartWidget";
+import logo from "./logo.png";
 
 export const NavBar = () => {
   return (
@@ -14,7 +14,6 @@ export const NavBar = () => {
           <a class="navbar-item" href="#">
             <img src={logo} alt="" />
           </a>
-          
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
@@ -24,17 +23,10 @@ export const NavBar = () => {
             <a class="navbar-item">Products</a>
           </div>
           <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-warning is-rounded ">
-                <img src={iconCart} alt="" />
-                </a>
-              </div>
-            </div>
+            <CartWidget />
           </div>
         </div>
       </nav>
     </>
   );
 };
-
