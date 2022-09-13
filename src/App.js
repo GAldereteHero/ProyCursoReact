@@ -16,7 +16,6 @@ function App() {
       <SpacerBlock props={5} /> {/*Props: Specify the space in rem*/}
       <ItemListContainer greeting={msj} />
       <SpacerBlock props={5} /> {/*Props: Specify the space in rem*/}
-      <Item />
       <Footer />
     </div>
   );

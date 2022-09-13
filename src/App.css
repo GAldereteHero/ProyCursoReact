@@ -1,5 +1,5 @@
 body{
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url('../public/stacked-waves-haikei.svg');
   background-size: cover;
 }
@@ -12,7 +12,7 @@ header {
 
 footer{
   position: absolute;
-  bottom: 0;
+  /* bottom: 0; */
   width: 100%;
 }
 

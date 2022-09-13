@@ -1,10 +1,24 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import "./style.css"
 import imgFood from "./organicFood.png";
 
+import { products } from "../../../assets/products.js"
+import {  customFetch } from "../../../assets/customFetch.js";
+import {  ItemList } from "../../ItemList/ItemList.jsx";
+
 export const ItemListContainer = ({ greeting }) => {
 
-  
+  const [listProduct, setListProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    customFetch(products)
+      .then( res => {
+        setLoading(false)
+        setListProducts(res)
+      })
+  },[])
+
   return (
     <>
       <div class="container ">
@@ -19,6 +33,11 @@ export const ItemListContainer = ({ greeting }) => {
           </div>
         </div>
       </div>
+      { loading ? 
+        <progress class="progress is-large is-info" max="100">60%</progress>
+        : 
+        < ItemList listProduct={listProduct} />
+      }
     </>
   );
 };
