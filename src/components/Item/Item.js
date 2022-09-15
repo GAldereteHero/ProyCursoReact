@@ -8,11 +8,10 @@ export const Item = ({product}) => {
   return (
     <>
       <div class="container ">
-        <div class="notification glass-effect">
-          <p>{product.product}</p>
+        <div class="notification glass-effect my-2">
+          <p className="is-size-3" >{product.product} ${product.price}</p>
           <img src={loadImage(`./${product.image}`)} alt="" />
-          <p>{product.price}</p>
-          <ItemCount initial={1} stock={10} onAdd={(count) => {console.log(`Se agregaron ${count} item/s al carrito`)}}/>
+          <ItemCount initial={1} stock={10} onAdd={(count) => {console.log(`Se agregaron ${count} item/s ${product.product} al carrito`)}}/>
         </div>
       </div>
     </>
