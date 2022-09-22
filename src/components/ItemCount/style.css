@@ -1,0 +1,17 @@
+.container-count{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+}
+
+.container-item-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-button-add{
+    margin: 20px auto;
+}

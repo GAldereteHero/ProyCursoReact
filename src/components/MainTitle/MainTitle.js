@@ -6,7 +6,7 @@ export const MainTitle = ({ greeting }) => {
   return (
     <div>
         <div class="container ">
-        <div class="notification glass-effect">
+        <div class="notification glass-effect border">
           <div className="columns">
             <div className="column">
               <img className="border-radius" src={imgFood} alt="Comida orgánica" />

@@ -6,7 +6,7 @@ export const Item = ({ product }) => {
   return (
     <>
       <div class="container ">
-        <div class="card glass-effect">
+        <div class="card glass-effect border">
           <img className="img" src={loadImage(`./${product.image}`)} alt="" />
           <p className="is-size-3">
             {product.product}

@@ -1,4 +1,5 @@
 import React, {useState } from 'react'
+import "./style.css";
 
 export const ItemCount = ({initial, stock, onAdd}) => {
 
@@ -14,21 +15,32 @@ export const ItemCount = ({initial, stock, onAdd}) => {
   return (
     <>
 
-    <div className="columns is-vcentered is-centered">
-        <div className="column ">
+    <div className="container-count">
+        <div className="container-item-buttons">
               <button className='button  is-success is-light' disabled={count === initial} onClick={decrease} >-</button>
-        </div>
-        <div className="column">
               <p className='is-size-2'>{`${count}`}</p>
-        </div>
-        <div className="column ">
               <button className='button  is-success is-light' disabled={count === stock} onClick={increase}>+</button>
         </div>
-      <div className="column">
+        <div className="container-button-add">
             <button className='button  is-warning is-light' onClick={reset} >Agregar al carrito</button>
-      </div>
+        </div>
     </div>
     
     </>
   )
 }
+
+{/* <div className="columns is-vcentered is-centered">
+<div className="column ">
+      <button className='button  is-success is-light' disabled={count === initial} onClick={decrease} >-</button>
+</div>
+<div className="column">
+      <p className='is-size-2'>{`${count}`}</p>
+</div>
+<div className="column">
+      <button className='button  is-success is-light' disabled={count === stock} onClick={increase}>+</button>
+</div>
+<div className="column">
+    <button className='button  is-warning is-light' onClick={reset} >Agregar al carrito</button>
+</div>
+</div> */}
