@@ -7,6 +7,7 @@ import { MainTitle } from "./components/MainTitle/MainTitle";
 import { ItemListContainer } from "./components/Containers/ItemListContainer/ItemListContainer.js";
 import { SpacerBlock } from "./components/Containers/SpacerBlock/SpacerBlock.js";
 import { Footer } from "./components/Footer/Footer.js";
+import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer/ItemDetailContainer.js";
 
 function App() {
   const msj = "Los alimentos órganicos de la tierra a tu mesa";
@@ -18,6 +19,7 @@ function App() {
       <SpacerBlock props={5} /> {/*Props: Specify the space in rem*/}
       <ItemListContainer />
       <SpacerBlock props={5} /> {/*Props: Specify the space in rem*/}
+      <ItemDetailContainer />
       <Footer />
     </div>
   );
