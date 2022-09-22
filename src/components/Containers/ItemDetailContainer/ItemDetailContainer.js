@@ -17,7 +17,7 @@ export const ItemDetailContainer = () => {
 
   return (
     <>
-      <div class="container ">
+      <div class="container">
         {loading ? ( <progress className="progress is-large is-info" max="100">60%</progress>) 
         : (<ItemDetail product={product} />)}
       </div>

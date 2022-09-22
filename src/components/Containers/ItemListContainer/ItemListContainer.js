@@ -18,7 +18,7 @@ export const ItemListContainer = () => {
 
   return (
     <>
-      <div class="container ">
+      <div class="container">
         {loading ? (
           <progress className="progress is-large is-info" max="100">
             60%

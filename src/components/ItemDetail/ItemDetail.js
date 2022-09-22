@@ -10,8 +10,8 @@ export const ItemDetail = ({ product }) => {
   
   return (
     <div>
-      <div class="container ">
-        <div class="notification glass-effect my-2">
+      <div className="container ">
+        <div className="notification glass-effect my-2">
           <p className="">{product.product} ${product.price}</p>
           <img src={loadImage(`./${product.image}`)} alt="" />
           <ItemCount
