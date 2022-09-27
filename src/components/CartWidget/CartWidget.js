@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import iconCart from "./shopping-cart.png";
 
 export const CartWidget = () => {
   return (
-    <div class="navbar-item">
-      <div class="buttons">
-        <a class="button is-warning is-rounded ">
+    <div className="navbar-item">
+      <div className="buttons">
+        <Link className="button is-warning is-rounded " to={"/cart"}>
           <img src={iconCart} alt="Icono de carrito" />
-        </a>
+        </Link>
       </div>
     </div>
   );
