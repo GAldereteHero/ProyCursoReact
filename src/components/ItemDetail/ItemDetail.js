@@ -1,9 +1,24 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 import { ItemCount } from "../ItemCount/ItemCount";
 
+
 export const ItemDetail = ({ item }) => {
   const loadImage = require.context("../../assets/img");
+
+
+  const [isAdd, setIsAdd] = useState(false);
+  const [amountItem, setAmountItem] = useState(0);
+
+  useEffect (() => {
+    console.log(`Se agregaron ${amountItem} unid.`)
+  }, [amountItem])
+
+  const onAdd = (count) => {
+    setAmountItem(count);
+    setIsAdd(true);
+  };
 
   return (
     <div>
@@ -19,15 +34,10 @@ export const ItemDetail = ({ item }) => {
             <p className="subTitle-detail">{item.description}</p>
           </div>
           <div>
-            <ItemCount
-              initial={1}
-              stock={item.stock}
-              onAdd={(count) => {
-                console.log(
-                  `Se agregaron ${count} item/s ${item.product} al carrito`
-                );
-              }}
-            />
+            { isAdd ? 
+              (<Link className="button is-warning is-rounded" to={"/cart"}>Terminar mi compra</Link>):
+              (<ItemCount initial={1} stock={item.stock} onAdd={onAdd}/>)
+            }
           </div>
         </div>
       </div>
