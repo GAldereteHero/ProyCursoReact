@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/react";
 import React, { createContext, useState } from "react";
 import { useEffect } from "react";
 
@@ -6,31 +5,43 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [cantidad, setCantidad] = useState(0);
+  const [qty, setQty] = useState(0);
+
+  useEffect(() => {
+    let qty = 0;
+    cart.forEach((producto) => (qty = qty + producto.count));
+    setQty(qty);
+  }, [cart]);
 
   const isInCart = (id) => {
     return cart.some((product) => product.item.id === id);
   };
 
   const addToCart = (item, count) => {
-
     if (isInCart(item.id)) {
-      setCart([...cart, { item, count }]);
+      const addedItem = cart.filter((producto) => {
+        return producto.item.id === item.id;
+      });
+      addedItem.forEach(
+        (producto) => (producto.count = producto.count + count)
+      );
+      const newCart = cart.filter((producto) => {
+        return producto.item.id !== item.id;
+      });
+      setCart([...addedItem,...newCart]);
     } else {
       setCart([...cart, { item, count }]);
     }
   };
 
-  const deleteProduct = (id) => {
-    console.log('Eliminamos el producto');
-    const updateCart = cart.filter((producto) => {
-      return producto.id !== id;
+  const deleteProduct = (item) => {
+    const newCart = cart.filter((producto) => {
+      return producto.item.id !== item.item.id;
     });
-    setCart(updateCart);
+    setCart([...newCart])
   };
   
   const clearCart = () => {
-    console.log('Eliminamos el carrito');
     setCart([]);
   };
 
