@@ -5,8 +5,10 @@ import { useParams } from "react-router-dom";
 import { products } from "../../../assets/products.js";
 import { customFetch } from "../../../assets/customFetch.js";
 import { ItemList } from "../../ItemList/ItemList.jsx";
+import { MainTitle } from "../../MainTitle/MainTitle";
 
 export const ItemListContainer = () => {
+  const msj = "Los alimentos órganicos de la tierra a tu mesa";
   const [listProduct, setListProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const {nameCategory} = useParams();
@@ -20,6 +22,7 @@ export const ItemListContainer = () => {
 
   return (
     <>
+      <MainTitle greeting={msj} />
       <div className="container">
         {loading ? (<progress className="progress is-large is-info" max="100">60%</progress>
         ) : (<ItemList listProduct={listProduct} />)}

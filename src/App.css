@@ -1,7 +1,13 @@
-body{
-  /* height: 100vh; */
+html {
+  min-height: 100%;
+  position: relative;
   background-image: url('../public/stacked-waves-haikei.svg');
   background-size: cover;
+}
+
+body{
+  margin: 0;
+  margin-bottom: 40px;
 }
 
 header {
@@ -12,7 +18,7 @@ header {
 
 footer{
   position: absolute;
-  /* bottom: 0; */
+  bottom: 0;
   width: 100%;
 }
 
@@ -33,6 +39,15 @@ footer{
 .container-detail{
  display: flex;
  width: 100vh;
+}
+
+.container-cart{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+ align-items: center;
+ width: 800px;
+ margin: 10px auto;
 }
 
 .card{
