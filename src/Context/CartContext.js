@@ -6,11 +6,17 @@ export const CartContext = createContext();
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [qty, setQty] = useState(0);
+  const [fullPrice, setFullPrice] = useState(0);
 
   useEffect(() => {
     let qty = 0;
-    cart.forEach((producto) => (qty = qty + producto.count));
+    let fullPrice = 0;
+    cart.map((producto) => { 
+      qty = qty + producto.count;
+      fullPrice = fullPrice + producto.count * producto.item.price;
+    })
     setQty(qty);
+    setFullPrice(fullPrice);
   }, [cart]);
 
   const isInCart = (id) => {
@@ -46,7 +52,7 @@ const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, deleteProduct, clearCart }}>
+    <CartContext.Provider value={{ cart, qty, fullPrice, addToCart, deleteProduct, clearCart }}>
       {children}
     </CartContext.Provider>
   );

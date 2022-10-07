@@ -1,12 +1,25 @@
 .container-item {
-    width: 500px;
+    width: 800px;
     display: flex;
     margin: 10px;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid black;
 }
 
 .title {
-    size: 16px;
+    font-size: 24px;
     margin-bottom: 0px;
 }
+
+.sub-title {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 0px;
+}
+
+.img-cart{
+    height: 115px;
+}
+

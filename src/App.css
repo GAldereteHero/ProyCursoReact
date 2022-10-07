@@ -8,6 +8,7 @@ html {
 body{
   margin: 0;
   margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -27,7 +28,6 @@ footer{
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 32px 0 rgba(0,0,0, 0.37);
-
 }
 
 .container{
@@ -39,15 +39,6 @@ footer{
 .container-detail{
  display: flex;
  width: 100vh;
-}
-
-.container-cart{
- display: flex;
- flex-direction: column;
- justify-content: space-evenly;
- align-items: center;
- width: 800px;
- margin: 10px auto;
 }
 
 .card{
