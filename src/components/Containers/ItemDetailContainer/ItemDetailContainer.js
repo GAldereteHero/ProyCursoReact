@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import { db } from "../../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
 
-import { products } from "../../../assets/products.js";
-import { customFetch } from "../../../assets/customFetch.js";
 import { ItemDetail } from "../../ItemDetail/ItemDetail.js";
 
 export const ItemDetailContainer = () => {
@@ -34,12 +32,6 @@ export const ItemDetailContainer = () => {
         setLoading(false);
       })
     })
-// useEffect(() => {
-//   customFetch(products).then((resp) => {
-//     setLoading(false);
-//     setProduct(resp.filter((e) => (e.id == IdProduct)));
-//   });
-// }, [IdProduct]);
 
 return (
   <>

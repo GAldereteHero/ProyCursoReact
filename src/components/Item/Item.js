@@ -11,7 +11,7 @@ export const Item = ({ product }) => {
           <Link to={`/product/${product.id}`}>
             <img className="img" src={loadImage(`./${product.image}`)} alt="" />
           </Link>
-          <p className="is-size-3">{product.product}</p>
+          <p className="is-size-3">{product.title}</p>
         </div>
       </div>
     </>

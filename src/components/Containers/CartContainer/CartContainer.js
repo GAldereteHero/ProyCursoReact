@@ -36,6 +36,9 @@ export const CartContainer = () => {
                       <button className="button is-danger is-light" onClick={() => clearCart()}>
                         Borrar Carrito
                       </button>
+                      <Link className="button is-success is-light mx-5" onClick={() => clearCart()} to={"/"}>
+                        Terminar compra
+                      </Link>
                     </div>
                     <p>Precio total ${fullPrice}</p>
                   </div>

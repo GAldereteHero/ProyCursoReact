@@ -12,8 +12,10 @@ const CartProvider = ({ children }) => {
     let qty = 0;
     let fullPrice = 0;
     cart.map((producto) => { 
-      qty = qty + producto.count;
-      fullPrice = fullPrice + producto.count * producto.item.price;
+      return (
+        qty = qty + producto.count,
+        fullPrice = fullPrice + producto.count * producto.item.price
+      )
     })
     setQty(qty);
     setFullPrice(fullPrice);

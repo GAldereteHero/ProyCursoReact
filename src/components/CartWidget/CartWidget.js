@@ -8,8 +8,6 @@ export const CartWidget = () => {
 
   const { qty } = useContext(CartContext);
 
-  console.log(qty);
-
   return (
     <div className="navbar-item mx-2">
       <div className="buttons">

@@ -28,7 +28,7 @@ export const ItemDetail = ({ item }) => {
         <div className="container-data">
           <div>
             <p className="title-detail">
-              {item.product} ${item.price}
+              {item.title} ${item.price}
             </p>
             <p className="subTitle-detail">{item.description}</p>
           </div>

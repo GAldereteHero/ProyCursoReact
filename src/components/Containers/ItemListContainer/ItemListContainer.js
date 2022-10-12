@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import { db } from "../../../firebase/firebase";
 import { getDocs, collection, query, where} from "firebase/firestore";
 
-import { products } from "../../../assets/products.js";
-import { customFetch } from "../../../assets/customFetch.js";
 import { ItemList } from "../../ItemList/ItemList.jsx";
 import { MainTitle } from "../../MainTitle/MainTitle";
 
@@ -14,7 +12,6 @@ export const ItemListContainer = () => {
   const msj = "Los alimentos órganicos de la tierra a tu mesa";
   const [listProduct, setListProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [allProducts, setAllProducts] = useState(true);
   const [error, setError] = useState(false);
   const {nameCategory} = useParams();
 
@@ -22,8 +19,6 @@ export const ItemListContainer = () => {
   useEffect(() => {
     const productsCollection = collection(db, 'products');
     const ask = query(productsCollection, where('category','==',`${nameCategory}`));
-
-    console.log(nameCategory);
 
     if(nameCategory){
       getDocs(ask)
@@ -63,13 +58,6 @@ export const ItemListContainer = () => {
 
     
   },[nameCategory])
-
-  // useEffect(() => {
-  //   customFetch(products).then((res) => {
-  //     setLoading(false);
-  //     nameCategory ? (setListProducts(res.filter((e) => e.category === nameCategory))) : (setListProducts(res))
-  //   });
-  // }, [nameCategory]);
 
   return (
     <>
