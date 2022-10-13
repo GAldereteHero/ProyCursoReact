@@ -1,17 +1,17 @@
 import React from "react";
-import { ItemCount } from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
-export const Item = ({product}) => {
-  
-  const loadImage = require.context('../../assets/img')
-  
+export const Item = ({ product }) => {
+  const loadImage = require.context("../../assets/img");
+
   return (
     <>
-      <div class="container ">
-        <div class="notification glass-effect my-2">
-          <p className="is-size-3" >{product.product} ${product.price}</p>
-          <img src={loadImage(`./${product.image}`)} alt="" />
-          <ItemCount initial={1} stock={10} onAdd={(count) => {console.log(`Se agregaron ${count} item/s ${product.product} al carrito`)}}/>
+      <div className="container ">
+        <div className="card glass-effect border">
+          <Link to={`/product/${product.id}`}>
+            <img className="img" src={loadImage(`./${product.image}`)} alt="" />
+          </Link>
+          <p className="is-size-3">{product.title}</p>
         </div>
       </div>
     </>

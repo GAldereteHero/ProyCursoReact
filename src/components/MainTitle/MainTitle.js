@@ -5,8 +5,8 @@ import imgFood from "./organicFood.png";
 export const MainTitle = ({ greeting }) => {
   return (
     <div>
-        <div class="container ">
-        <div class="notification glass-effect">
+        <div className="container ">
+        <div className="notification glass-effect border">
           <div className="columns">
             <div className="column">
               <img className="border-radius" src={imgFood} alt="Comida orgánica" />
