@@ -27,6 +27,7 @@ export const ItemDetailContainer = () => {
       })
       .catch(() => {
         setError(true);
+        console.log(error);
       })
       .finally(() => {
         setLoading(false);
