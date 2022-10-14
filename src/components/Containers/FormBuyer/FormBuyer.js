@@ -1,4 +1,5 @@
 import {React, useState} from 'react'
+import "./style.css";
 
 export const FormBuyer = ({ finishBuy }) => {
 
@@ -21,7 +22,7 @@ export const FormBuyer = ({ finishBuy }) => {
 
     return (
         <>
-            <form onSubmit={handlerSubmit}>
+            <form className='container-form' onSubmit={handlerSubmit}>
                 <label>Ingrese sus datos personales</label>
                 <label>Nombre<input type="text" name='nombre' placeholder={buyer.nombre} onChange={handlerInput} /></label>
                 <label>Apellido<input type="text" name='apellido' placeholder={buyer.apellido} onChange={handlerInput} /></label>
