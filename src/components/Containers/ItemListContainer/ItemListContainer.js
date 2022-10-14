@@ -15,49 +15,31 @@ export const ItemListContainer = () => {
   const [error, setError] = useState(false);
   const {nameCategory} = useParams();
 
-
   useEffect(() => {
     const productsCollection = collection(db, 'products');
-    const ask = query(productsCollection, where('category','==',`${nameCategory}`));
-
-    if(nameCategory){
-      getDocs(ask)
-      .then((data) => {
-        const listProducts = data.docs.map((product) => {
+    const oneCategory = query(productsCollection, where('category','==',`${nameCategory}`));
+ 
+    const getProduct = async () => {
+      try{
+        const data = await getDocs(nameCategory ? oneCategory : productsCollection);
+        const products = data.docs.map((product) => {
           return {
             ...product.data(),
-            id: product.id
+            id: product.id,
           }
-        })
-        setListProducts(listProducts)
-      })
-      .catch(() => {
+        });
+        setListProducts(products);
+      }
+      catch{
         setError(true);
-      })
-      .finally(() => {
+        console.log(error);
+      }
+      finally{
         setLoading(false);
-      })
-    }else{
-      getDocs(productsCollection)
-      .then((data) => {
-        const listProducts = data.docs.map((product) => {
-          return {
-            ...product.data(),
-            id: product.id
-          }
-        })
-        setListProducts(listProducts)
-      })
-      .catch(() => {
-        setError(true);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
+      }
     }
-
-    
-  },[nameCategory])
+    getProduct();
+  },[nameCategory, error])
 
   return (
     <>
