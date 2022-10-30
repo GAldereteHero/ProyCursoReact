@@ -1,11 +1,10 @@
 import { React, useState, useEffect } from "react";
-import "./style.css";
 import { useParams } from "react-router-dom";
 
 import { db } from "../../../firebase/firebase";
 import { getDocs, collection, query, where} from "firebase/firestore";
 
-import { ItemList } from "../../ItemList/ItemList.jsx";
+import { ItemList } from "../../ItemList/ItemList";
 import { MainTitle } from "../../MainTitle/MainTitle";
 
 export const ItemListContainer = () => {
@@ -44,7 +43,7 @@ export const ItemListContainer = () => {
   return (
     <>
       <MainTitle greeting={msj} />
-      <div className="container">
+      <div className="container container-list">
         {loading ? (<progress className="progress is-large is-info" max="100">60%</progress>
         ) : (<ItemList listProduct={listProduct} />)}
       </div>

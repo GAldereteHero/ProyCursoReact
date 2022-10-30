@@ -1,7 +1,7 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
 import {CartWidget} from "../CartWidget/CartWidget"
-import logo from "./logo.png";
+import logo from "../../assets/img/logo.png";
 
 export const NavBar = () => {
   const productCategories = [
@@ -14,7 +14,7 @@ export const NavBar = () => {
   return (
     <>
       <nav
-        className="navbar glass-effect"
+        className="navbar border--green glass-effect"
         role="navigation"
         aria-label="main navigation"
       >

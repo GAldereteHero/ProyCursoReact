@@ -30,9 +30,9 @@ export const CartContainer = () => {
 
   const updateStock = () => {
     cart.map((i) => {
-      const updateItem = doc(db, 'products', i.item.id)
-      updateDoc(updateItem, { stock: (i.item.stock - i.count) })
-    })
+        const updateItem = doc(db, 'products', i.item.id)
+        updateDoc(updateItem, { stock: (i.item.stock - i.count) })
+      })
   }
 
   return (
@@ -43,7 +43,7 @@ export const CartContainer = () => {
             <div className="container">
               <div className="container-cart glass-effect-cart border">
                 <div className="container-emptyCart">
-                  <p>Su compra se realizo con exito</p>
+                  <p>Su compra se realizó con éxito</p>
                   <p>Id de su compra: {buyId}</p>
                   <div className="buttons m-3">
                     <Link className="button is-warning is-rounded" to={"/"}>
