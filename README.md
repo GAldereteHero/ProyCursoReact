@@ -10,7 +10,8 @@ en el contexto del curso de CoderHouse - React
 - Firebase
 - Sass
 - React router dom
-- Flat icon
+- Flaticon
+- Freepik 
 
 ## Pasos para su instalación
 

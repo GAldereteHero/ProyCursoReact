@@ -2,7 +2,6 @@ import { React, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../Context/CartContext";
 import { CartItem } from "../../CartItem/CartItem";
-import "./style.css";
 import { db } from "../../../firebase/firebase"
 import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/firestore";
 import { FormBuyer } from "../FormBuyer/FormBuyer";
@@ -30,9 +29,9 @@ export const CartContainer = () => {
 
   const updateStock = () => {
     cart.map((i) => {
-        const updateItem = doc(db, 'products', i.item.id)
-        updateDoc(updateItem, { stock: (i.item.stock - i.count) })
-      })
+      const updateItem = doc(db, 'products', i.item.id)
+      updateDoc(updateItem, { stock: (i.item.stock - i.count) })
+    })
   }
 
   return (
@@ -77,24 +76,25 @@ export const CartContainer = () => {
                       {cart.map((producto, index) => {
                         return (<CartItem key={index} Item={producto} deleteProduct={deleteProduct} />);
                       })}
-                      <div className="container border-footer ">
+                      <div className="container-cart-footer">
                         <div className="container-button-add mx-5">
                           <button className="button is-danger is-light" onClick={() => clearCart()}>
                             Borrar Carrito
                           </button>
                         </div>
-                        <p>Precio total ${fullPrice}</p>
+                        <div>
+                        <p className="is-size-3 is-warning">Precio total ${fullPrice}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                    <div className="container-cart glass-effect-cart border">
-                      < FormBuyer finishBuy={finishBuy} />
-                    </div>
+                  <div className="container-cart color-effect-form border ">
+                    < FormBuyer finishBuy={finishBuy} />
+                  </div>
                 </>
               )
           )
       }
-
     </>
   );
 };
